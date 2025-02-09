@@ -1,7 +1,6 @@
 {
-  "name": "brutal",
+  "name": "shining-shell",
   "version": "1.2.0",
-  "private": false,
   "type": "module",
   "packageManager": "pnpm@8.6.0",
   "author": {
