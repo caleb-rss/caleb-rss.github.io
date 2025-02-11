@@ -1,0 +1,82 @@
+---
+import Layout from '@layouts/Default.astro';
+import MobileSocials from '@components/home/MobileSocials.astro';
+import { Pill } from '@eliancodes/brutal-ui';
+import { Button } from '@eliancodes/brutal-ui';
+import { Card } from '@eliancodes/brutal-ui';
+
+const builtWith = [
+  { name: 'Astro', url: 'https://astro.build/' },
+  { name: 'UnoCSS', url: 'https://uno.antfu.me/' },
+  {
+    name: 'Content Collections',
+    url: 'https://docs.astro.build/en/guides/content-collections/',
+  },
+  { name: 'RSS', url: 'https://docs.astro.build/en/guides/rss/' },
+  {
+    name: 'Sitemap',
+    url: 'https://docs.astro.build/en/guides/integrations-guide/sitemap/',
+  },
+  { name: 'Vercel', url: 'https://vercel.com' },
+  { name: 'TypeScript', url: 'https://www.typescriptlang.org/' },
+];
+---
+
+<Layout
+  title='Resume'
+  pageTitle='Caleb RS Resume'
+  description='IT System and Support Manager | Blacksburg VA.'
+>
+  <main class='bg-pink p-6'>
+    <MobileSocials />
+    <section id='about' class='grid md:grid-cols-8 gap-8 mt-4'>
+      <h2 class='hidden'>About Brutal</h2>
+      <div class='col-span-6'>
+        <Card>
+          <div class='flex flex-col justify-between items-start gap-4'>
+            <p class='mt-4 outfit text-2xl md:text-3xl lg:text-3xl'>
+              IT Systems & Support Manager | Engineering Education @ Virginia Tech
+            </p>
+          </div>
+        </Card>
+      </div>
+      </div>
+      <div class='col-span-2 row-span-2'>
+        <Card>
+          <h2 class='text-2xl md:text-4xl lg:text-6xl mb-4 dm-serif'>
+            Who is Caleb?
+          </h2>
+          <p class='poppins'>
+            Caleb is a seasoned "Full Stack" IT Systems and Support Professional with over 5 years of high impact experience in Higher Education IT Environments.
+          </p>
+        </Card>
+      </div>
+      <h2 class='hidden'>About Brutal</h2>
+      <div class='col-span-6'>
+        <Card>
+          <div class='flex flex-col justify-between items-start gap-4'>
+            <p class='poppins'>
+            February 2024 - Present
+            </br>
+            Modernizing Processes, Implementing Industry Standards, Embracing Cutting Edge Research
+          </p>
+          </div>
+        </Card>
+      </div>
+      </div>
+      <div class='col-span-2'>
+        <Card>
+          <h2 class='text-2xl md:text-4xl lg:text-6xl mb-4 dm-serif'>
+            What is Brutal?
+          </h2>
+          <p class='poppins'>
+            Brutal is a theme built with Astro, UnoCSS by <a
+              href='https://www.elian.codes/'>Elian</a
+            >. It's a simple, fast, and modern theme that is easy to use and
+            customize. Mainly meant to power blogs and personal websites.
+          </p>
+        </Card>
+      </div>
+    </section>
+  </main>
+</Layout>
