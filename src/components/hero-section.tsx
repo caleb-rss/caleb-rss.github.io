@@ -16,21 +16,21 @@ export default function HeroSection() {
             <H3>
               Hello there! You can call me{' '}
               <span className="text-shadow-neo scroll-m-20 font-Space_Grotesk text-3xl font-extrabold tracking-tight text-cerulean-400">
-                Gregg
+                Caleb
               </span>
               !
             </H3>
-            <H1 className="font-Space_Grotesk">Creating another project using Code and Caffeine</H1>
-            <H4>(Sometimes a little bit too much caffeine...)</H4>
+            <H1 className="font-Space_Grotesk">Creating another project using Code</H1>
+            <H4>(and a little elbow grease)</H4>
             <div className="text-xl">
-              On a journey to become a Full Stack Developer, fueled by a passion for innovation.
+              On a journey to become the greatest IT Manager, fueled by a passion for innovation.
             </div>
           </div>
           <Button className="w-fit">Let&apos;s Work Together!</Button>
         </div>
       </div>
       <div className="flex min-h-[450px] w-full items-center justify-center border-2 border-black bg-blue-200 p-10 md:min-h-[calc(100dvh-80px)]">
-        <Image src="/images/Landing Page.png" alt="hasmire" width={546} height={563} />
+        <Image src="/images/replace.png" alt="caleb" width={546} height={563} />
       </div>
     </div>
   )

@@ -13,15 +13,15 @@ export default function About() {
     <div className="grid w-full grid-cols-2 items-center justify-between gap-x-48 gap-y-20 bg-purple-300 p-24 md:min-h-[calc(90dvh-80px)]">
       <InfoCard
         title="About Me"
-        description="I'm a computer science student at the University of Santo Tomas, where I'm learning all about coding and most importantly, software development."
+        description="I'm an IT Manager at Virginia Tech, where I manage the IT Department for Engineering Education."
         imageSrc={Character1}
         imageAlt="Character1"
         bgColor="bg-blue-300"
         imagePosition="right"
       />
       <InfoCard
-        title="Software Development"
-        description="I thrive on continuously learning various technologies, from frontend frameworks to backend languages, to shape ideas into functional applications."
+        title="Web Development"
+        description="I thrive on continuously learning new technology, from frontend frameworks to backend languages, to shape ideas into functional applications."
         imageSrc={Character2}
         imageAlt="Character2"
         bgColor="bg-vermillion-300"
@@ -37,7 +37,7 @@ export default function About() {
       />
       <InfoCard
         title="Other Hobbies"
-        description="Here's are some of my other passions: Bookworm, Manga Fanatic, Fantasy Novels Devotee, Short Stories Explorer, OPM Gigs Supporter."
+        description="Here's are some of my other passions: Disc Golf, Film and Cinema, The Adventures of Tintin, and Pacers Basketball."
         imageSrc={Character4}
         imageAlt="Character4"
         bgColor="bg-mongoose-400"

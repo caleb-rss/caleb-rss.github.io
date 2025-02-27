@@ -12,7 +12,7 @@ export default function NavBar() {
     <>
       <div className="sticky top-0 z-10 flex h-20 w-full items-center justify-between border-2 border-slate-900 bg-nepal-100 px-4 md:px-24">
         <h1 className="text-shadow-neo scroll-m-20 font-Space_Grotesk text-4xl font-extrabold tracking-tight text-cerulean-400 lg:text-5xl">
-          hasmire
+          caleb
         </h1>
         {/* Desktop Navbar */}
         <div className="hidden gap-8 md:flex">
@@ -22,7 +22,7 @@ export default function NavBar() {
           <div className="text-xl text-slate-900">projects</div>
           <div className="text-xl text-slate-900">contact</div>
         </div>
-        <Button className="hidden md:block">Let&apos;s Work Together!</Button>
+        <Button className="hidden md:block" onClick={() => window.location.href = '/contact'}>Let&apos;s Work Together!</Button>
         <Hamburger isOpen={isOpen} setIsOpen={setIsOpen} />
       </div>
       {isOpen && (
