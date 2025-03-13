@@ -4,11 +4,17 @@ import Bio from '../../components/Bio.astro';
 import getPostData from '../../utils/getPostData';
 
 export async function getStaticPaths() {
-  const posts = await Astro.glob('../../data/blog-posts/*.md');
-  return posts.map(p => ({
-    params: { slug: p.file.split('/').pop().split('.').shift() },
-    props: { post: p },
-  }));
+  const posts = import.meta.glob('../../data/blog-posts/*.md');
+  const postEntries = await Promise.all(
+    Object.entries(posts).map(async ([path, resolver]) => {
+      const post = await resolver();
+      return {
+        params: { slug: path.split('/').pop().split('.').shift() },
+        props: { post },
+      };
+    })
+  );
+  return postEntries;
 }
 
 const { Content, frontmatter } = Astro.props.post;
