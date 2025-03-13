@@ -134,7 +134,7 @@ To embed a video tour of Chicago in your document, you would typically use code 
 Replace "videoid" with the actual YouTube video ID.
 
 
-<iframe width="560" height="315" src="https://www.youtube.com/watch?v=BSVsFfF1xY4" frameborder="0" allowfullscreen></iframe>
+[![Chicago Video Tour](https://img.youtube.com/vi/BSVsFfF1xY4/0.jpg)](https://www.youtube.com/watch?v=BSVsFfF1xY4)
 
 
 ## Economic Importance
