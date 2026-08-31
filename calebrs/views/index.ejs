@@ -222,19 +222,57 @@
 
 
             <section id="photos">
-                <h2><span>04.</span> PHOTOGRAPHY</h2>
+    <h2><span>04.</span> PHOTOGRAPHY</h2>
 
-                <p>
-                    Some things I've seen.
-                </p>
+    <p class="section-intro">
+        Some things I've seen.
+    </p>
 
-                <div class="photo-links">
-                    <a href="#">[portraits]</a>
-                    <a href="#">[night]</a>
-                    <a href="#">[places]</a>
-                    <a href="#">[misc]</a>
-                </div>
-            </section>
+    <div class="photo-filter">
+        <button data-filter="all">[all]</button>
+        <button data-filter="portraits">[portraits]</button>
+        <button data-filter="night">[night]</button>
+        <button data-filter="places">[places]</button>
+    </div>
+
+    <div class="photo-grid">
+
+        <figure class="photo-item" data-category="night">
+            <div class="photo-meta">
+                <span>01 / NIGHT</span>
+                <span>2026</span>
+            </div>
+
+            <img
+                src="/photos/night/flashlight.jpg"
+                alt="flashlight"
+                loading="lazy"
+            >
+
+            <figcaption>
+                blacksburg, va
+            </figcaption>
+        </figure>
+
+        <figure class="photo-item" data-category="portraits">
+            <div class="photo-meta">
+                <span>02 / PORTRAIT</span>
+                <span>2026</span>
+            </div>
+
+            <img
+                src="/photos/portraits/portrait-01.webp"
+                alt="Portrait photograph"
+                loading="lazy"
+            >
+
+            <figcaption>
+                portrait
+            </figcaption>
+        </figure>
+
+    </div>
+</section>
 
 
             <footer>

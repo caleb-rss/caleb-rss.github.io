@@ -326,6 +326,72 @@ h3 {
     color: var(--warm);
 }
 
+.section-intro {
+    color: var(--muted);
+}
+
+.photo-filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+
+    margin: 25px 0 50px;
+}
+
+.photo-filter button {
+    border: 0;
+    padding: 0;
+
+    background: none;
+    color: var(--muted);
+
+    font: inherit;
+    font-size: 0.8rem;
+
+    cursor: pointer;
+}
+
+.photo-filter button:hover,
+.photo-filter button.active {
+    color: var(--primary);
+}
+
+.photo-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 90px;
+}
+
+.photo-item {
+    margin: 0;
+}
+
+.photo-item img {
+    display: block;
+
+    width: 100%;
+    height: auto;
+
+    margin: 10px 0 12px;
+
+    object-fit: cover;
+}
+
+.photo-meta {
+    display: flex;
+    justify-content: space-between;
+
+    color: var(--primary);
+
+    font-size: 0.75rem;
+}
+
+.photo-item figcaption {
+    color: var(--muted);
+
+    font-size: 0.75rem;
+}
+
 
 /* FOOTER */
 
