@@ -15,7 +15,7 @@ if (!container) {
 const width = 380;
 const height = 280;
 
-const cameraDistance = 5.8;
+const cameraDistance = 7.5;
 
 const asciiResolution = 0.20;
 const characters = " .:-=+*#%@";
@@ -56,16 +56,16 @@ const muted =
  * EASY COLOR TWEAKING
  */
 const colors = {
-    stars: "#7a756b",
+    stars: "#3a008b",
 
     planet: pageText,
 
     ringOuter: primary,
     ringInner: "#b63d18",
 
-    cometTail: muted,
+    cometTail: "#BCB8B1",
     cometDust: primary,
-    comet: pageText
+    comet: "#6c27cd"
 };
 
 
@@ -144,7 +144,7 @@ starScene.add(
 
 
 const stars = [];
-const starCount = 34;
+const starCount = 300;
 
 
 /*
@@ -295,8 +295,8 @@ outerRingScene.add(
 
 const outerRingGeometry =
     new THREE.RingGeometry(
-        2.05,
-        3.30,
+        2.25,
+        3.55,
         128
     );
 
@@ -308,6 +308,16 @@ const outerRingMaterial =
     });
 
 
+const ringTilt = {
+    x: Math.PI / 2.35,
+    z: 0.78
+};
+
+
+const outerRingGroup =
+    new THREE.Group();
+
+
 const outerRing =
     new THREE.Mesh(
         outerRingGeometry,
@@ -315,18 +325,23 @@ const outerRing =
     );
 
 
-/*
- * Low-left -> high-right
- */
-outerRing.rotation.x =
-    Math.PI / 2.55;
+outerRing.position.z =
+    0.06;
 
-outerRing.rotation.z =
-    Math.PI / 8;
+outerRingGroup.add(
+    outerRing
+);
+
+
+outerRingGroup.rotation.set(
+    ringTilt.x,
+    0,
+    ringTilt.z
+);
 
 
 outerRingScene.add(
-    outerRing
+    outerRingGroup
 );
 
 
@@ -345,8 +360,8 @@ innerRingScene.add(
 
 const innerRingGeometry =
     new THREE.RingGeometry(
-        1.92,
-        2.45,
+        2.00,
+        2.72,
         128
     );
 
@@ -358,6 +373,10 @@ const innerRingMaterial =
     });
 
 
+const innerRingGroup =
+    new THREE.Group();
+
+
 const innerRing =
     new THREE.Mesh(
         innerRingGeometry,
@@ -365,15 +384,23 @@ const innerRing =
     );
 
 
-innerRing.rotation.x =
-    Math.PI / 2.55;
+innerRing.position.z =
+    0.12;
 
-innerRing.rotation.z =
-    Math.PI / 8;
+innerRingGroup.add(
+    innerRing
+);
+
+
+innerRingGroup.rotation.set(
+    ringTilt.x + 0.02,
+    0,
+    ringTilt.z - 0.08
+);
 
 
 innerRingScene.add(
-    innerRing
+    innerRingGroup
 );
 
 
@@ -1268,6 +1295,27 @@ function animate(timestamp) {
     planet.rotation.y +=
         0.12
         * delta;
+
+
+    const ringWobbleX =
+        Math.sin(time * 0.9)
+        * 0.08;
+
+    const ringWobbleZ =
+        Math.sin(time * 1.35)
+        * 0.12;
+
+    outerRingGroup.rotation.x =
+        ringTilt.x + ringWobbleX;
+
+    outerRingGroup.rotation.z =
+        ringTilt.z + ringWobbleZ;
+
+    innerRingGroup.rotation.x =
+        ringTilt.x + 0.02 + ringWobbleX * 0.75;
+
+    innerRingGroup.rotation.z =
+        ringTilt.z - 0.08 + ringWobbleZ * 0.75;
 
 
 /* --------------------------------------------------
