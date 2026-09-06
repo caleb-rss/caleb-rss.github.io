@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>calebrs.com | archive</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <main class="vault-shell">
+        <div class="vault-card">
+            <p class="eyebrow">archive access</p>
+            <h1>archive unlock</h1>
+            <p>Enter a password to open an image gallery.</p>
+
+            <% if (typeof error !== 'undefined' && error) { %>
+                <p class="form-error"><%= error %></p>
+            <% } %>
+
+            <form class="vault-form" method="post" action="/gallery/access">
+                <label for="password">password</label>
+                <input id="password" name="password" type="password" autocomplete="off" required>
+                <button type="submit">unlock archive</button>
+            </form>
+        </div>
+                <div class="archive-list">
+                    <% if (Array.isArray(galleries) && galleries.length) { %>
+                        <% galleries.forEach((gallery) => { %>
+                            <div class="archive-item">
+                                <div>
+                                    <strong><%= gallery.label %></strong>
+                                    <span><%= (gallery.categories && gallery.categories.length) ? gallery.categories.join(' / ') : (gallery.dir || 'private') %></span>
+                                </div>
+                                <a href="/gallery/<%= gallery.key %>">open →</a>
+                            </div>
+                        <% }) %>
+                    <% } %>
+                </div>
+    </main>
+</body>
+</html>
